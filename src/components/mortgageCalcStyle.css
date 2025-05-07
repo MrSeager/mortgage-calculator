@@ -8,6 +8,10 @@ body {
     transition: .5s !important;
 }
 
+.cs-w {
+    width: 950px !important;
+}
+
 /*Background*/
 .cs-bg-main {
     background-color: hsl(202, 86%, 94%) !important;
@@ -59,4 +63,61 @@ body {
 
 .cs-btn-submit:hover {
     background-color: hsl(61, 70%, 82%) !important;
+}
+
+/*Form*/
+.cs-form-group:hover
+.cs-form-control {
+    border-color: hsl(61, 70%, 52%) !important;
+}
+
+.cs-form-group:hover
+.cs-inputgroup {
+    border-color: hsl(61, 70%, 52%) !important;
+    background-color: hsl(61, 70%, 52%) !important;
+}
+
+.form-check.cs-radio {
+    border-color: hsl(200, 26%, 54%) !important;
+}
+
+.form-check-label {
+    width: 100% !important;
+}
+
+.cs-radio .form-check-input {
+    box-shadow: none !important;
+    border: solid 2px hsl(200, 26%, 54%) !important;
+    transition: .5s !important;
+    position: relative;
+}
+
+.cs-radio .form-check-input:checked {
+    border-color: hsl(61, 70%, 52%) !important;
+    background-color: transparent !important;
+}
+
+.cs-radio .form-check-input:checked::before {
+    content: "";
+    display: block;
+    width: 9px; /* Adjust dot size */
+    height: 9px;
+    border-radius: 50%;
+    background-color: hsl(61, 70%, 52%); /* Change checked dot color */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .5s !important;
+}
+
+.cs-radio:has(.form-check-input:checked) {
+    border-color: hsl(61, 70%, 52%) !important;
+    background-color: hsla(61, 70%, 52%, 0.25) !important;
+}
+
+@media (max-width: 991px) {
+    .cs-w {
+        width: 100% !important;
+    }
 }

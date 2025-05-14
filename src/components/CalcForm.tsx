@@ -7,9 +7,13 @@ import CulcImg from '../assets/images/icon-calculator.svg';
 interface CalcFormProps {
     validated: boolean;
     handleSubmit: (event: any) => void;
+    handleMortgageAmountChange: (event: any) => void;
+    handleMortgageTermChange: (event: any) => void;
+    handleIntRateChange: (event: any) => void;
+    handleChange: (event: any) => void;
 }
 
-const CalcForm: FC<CalcFormProps> = ({ validated, handleSubmit }) => {
+const CalcForm: FC<CalcFormProps> = ({ validated, handleSubmit, handleMortgageAmountChange, handleMortgageTermChange, handleIntRateChange, handleChange }) => {
     return (
         <Form noValidate validated={validated} onSubmit={handleSubmit} className='h-100'>
             <Row className='h-100'>
@@ -21,6 +25,9 @@ const CalcForm: FC<CalcFormProps> = ({ validated, handleSubmit }) => {
                             required
                             type='number'
                             className='border-start-0 cs-bc border-2 shadow-none cs-transition cs-form-control cs-fw-700 cs-fc-two'
+                            min='1'
+                            step='.01'
+                            onChange={handleMortgageAmountChange}
                         />
                         <Form.Control.Feedback type='invalid'>This field is requireds</Form.Control.Feedback>
                     </InputGroup>
@@ -33,6 +40,8 @@ const CalcForm: FC<CalcFormProps> = ({ validated, handleSubmit }) => {
                             required
                             className='border-end-0 shadow-none cs-bc border-2 cs-fw-700 cs-fc-two cs-transition cs-form-control'
                             type='number'
+                            min="0"
+                            onChange={handleMortgageTermChange}
                         />
                         <InputGroup.Text className='border-start-0 border-2 cs-fc-three cs-fw-700 cs-bg-main cs-bc cs-transition cs-inputgroup'>years</InputGroup.Text>
                         <Form.Control.Feedback type='invalid'>This field is requireds</Form.Control.Feedback>
@@ -46,7 +55,9 @@ const CalcForm: FC<CalcFormProps> = ({ validated, handleSubmit }) => {
                             required
                             className='border-end-0 cs-bc shadow-none border-2 cs-fw-700 cs-fc-two cs-transition cs-form-control'
                             type='number'
-                            aria-describedby='validationRate'
+                            min='0'
+                            step='0.01'
+                            onChange={handleIntRateChange}
                         />
                         <InputGroup.Text className='border-start-0 border-2 cs-fc-three cs-fw-700 cs-bg-main cs-bc cs-transition cs-inputgroup'>%</InputGroup.Text>
                         <Form.Control.Feedback type='invalid'>This field is requireds</Form.Control.Feedback>
@@ -62,6 +73,7 @@ const CalcForm: FC<CalcFormProps> = ({ validated, handleSubmit }) => {
                             type='radio'
                             id='revers-checkbox-1'
                             className='border border-2 rounded px-5 py-2 mb-2 cs-fw-700 cs-fc-two cs-radio cs-transition'
+                            onChange={handleChange}
                             required
                         />
                         <Form.Check
@@ -70,6 +82,7 @@ const CalcForm: FC<CalcFormProps> = ({ validated, handleSubmit }) => {
                             type='radio'
                             id='revers-checkbox-2'
                             className='border border-2 rounded px-5 py-2 cs-fw-700 cs-fc-two cs-radio cs-transition'
+                            onChange={handleChange}
                             required
                         />
                     </Form>

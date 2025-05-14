@@ -12,12 +12,24 @@ body {
     width: 950px !important;
 }
 
+.cs-rounded {
+    border-radius: 20px !important;
+}
+
+.cs-rounded-sec {
+    border-radius: 0 20px 20px 60px;
+}
+
 /*Background*/
 .cs-bg-main {
     background-color: hsl(202, 86%, 94%) !important;
 }
 
 .cs-bg-second {
+    background-color: hsl(202, 55%, 19%) !important;
+}
+
+.cs-bg-therd {
     background-color: hsl(202, 55%, 16%) !important;
 }
 
@@ -27,6 +39,10 @@ body {
 
 .cs-bc {
     border-color: hsl(200, 26%, 54%) !important;
+}
+
+.cs-bc-two {
+    border-top: 3px solid hsl(61, 70%, 52%) !important;
 }
 
 /*Font*/
@@ -42,8 +58,16 @@ body {
     color: hsl(200, 24%, 40%) !important;
 }
 
+.cs-fc-four {
+    color: hsl(61, 70%, 52%) !important;
+}
+
 .cs-fw-700 {
     font-weight: 700 !important;
+}
+
+.cs-fs {
+    font-size: 14px !important;
 }
 
 /*Buttons*/
@@ -75,6 +99,16 @@ body {
 .cs-inputgroup {
     border-color: hsl(61, 70%, 52%) !important;
     background-color: hsl(61, 70%, 52%) !important;
+}
+
+.was-validated .form-control:invalid {
+    border-color: hsl(0, 70%, 52%) !important; /* Red border for invalid state */
+}
+
+.was-validated .input-group:has(.form-control:invalid) .input-group-text {
+    border-color: hsl(0, 70%, 52%) !important;
+    background-color: hsl(0, 70%, 52%) !important;
+    color: white !important;
 }
 
 .form-check.cs-radio {
@@ -119,5 +153,9 @@ body {
 @media (max-width: 991px) {
     .cs-w {
         width: 100% !important;
+    }
+
+    .cs-rounded, .cs-rounded-sec {
+        border-radius: 0 !important;
     }
 }
